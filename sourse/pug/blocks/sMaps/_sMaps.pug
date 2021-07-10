@@ -1,0 +1,52 @@
+mixin sMaps(data)
+	// start sMaps
+	+b.SECTION.sMaps.section#sMaps&attributes(attributes)
+		+e.container.container
+			+b.section-title.text-center
+				h2 Exclusive World Maps
+				p An excellent solution for your interior
+			+e.items
+				+sMapsItem({
+					imgGroupName: 1,
+					title: 'Lux led world map',
+				})
+				+sMapsItem({
+					imgGroupName: 2,
+					title: '3D led world map',
+				})
+				+sMapsItem({
+					imgGroupName: 3,
+					title: '3D world map',
+				})
+				+sMapsItem({
+					imgGroupName: 4,
+					title: 'Cork world map',
+				})
+	// end sMaps
+
+mixin sMapsItem(data)
+	+e.item
+		+e.i-row.row
+			+e.img-col.col-lg
+				+e.img-row.row
+					+e.sm-col.col-sm-auto
+						+e.img--sm
+							img(loading="lazy" src=`img/@2x/sMaps-${data.imgGroupName}-1.png` alt="")
+						+e.img--sm
+							img(loading="lazy" src=`img/@2x/sMaps-${data.imgGroupName}-2.png` alt="")
+					+e.big-col.col-sm
+						+e.img--big
+							img(loading="lazy" src=`img/@2x/sMaps-${data.imgGroupName}-3.png` alt="")
+			+e.box-col.col-lg-auto
+				+e.box
+					+e.title=data.title
+					+e.descr Описание: An excellent solution for your interior, n excellent solu, solution for your.
+					+e.price Price:
+					+e.size-items
+						+e.size
+							span 1700mm х 836mm...........
+							b 50€
+						+e.size
+							span 2300mm х 1131mm..........
+							b 70€
+					+e.buy-btn(href='#') BUY

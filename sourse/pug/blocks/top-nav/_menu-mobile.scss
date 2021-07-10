@@ -1,6 +1,4 @@
-
 $h: em(2);
-
 .toggle-menu-mobile {
 	display: block;
 	height: $h* 12;
@@ -95,7 +93,8 @@ $h: em(2);
 	will-change: transform;
 
 	&__inner {
-		padding: rem(20) 0;
+		background-color: $white;
+		padding: rem(20);
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
@@ -139,21 +138,58 @@ $h: em(2);
 		}
 	}
 
-	ul {
-		position: relative;
+	&__logo{
+		display: block;
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+		margin-bottom: rem(20);
+	}
+	//menu
+	ul{
+		display: block;
+		padding: 0;
+		margin: 0 0 rem(40);
+
+		li{
+			display: block;
+			margin-bottom: rem(20);
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			a{
+				padding: 0;
+				display: block;
+				text-decoration: none;
+				text-align: left;
+
+				color: $body-color;
+				font-size: rem(16);
+				font-weight: 700;
+				line-height: (20.48/16);
+			}
+		}
 	}
 
-	li {
-		display: block;
-		margin: 0;
-		border-top: 1px solid rgba(255, 255, 255, .13);
-
-		a {
-			// font-size: 16px;
-
-			padding: 10px;
-			display: block;
-
+	//
+	&__mail{
+		color: $body-color;
+		&:hover{
+			color: $body-color;
 		}
+		font-size: rem(16);
+		line-height: (20.48/16);
+
+		text-decoration: none;
+
+		display: block;
+		margin-bottom: rem(20);
+	}
+	&__btn{
+		@extend .btn-green;
+		padding: rem(5) rem(16);
+		min-width: rem(181);
 	}
 }

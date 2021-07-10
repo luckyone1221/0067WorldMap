@@ -1,0 +1,212 @@
+// start .sMaps
+.sMaps {
+
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(43)};
+		--sPB: #{rem(78px)};
+		--sTPB: #{rem(21)};
+	}
+
+	&__container{
+		@include media-breakpoint-up(xxl){
+			max-width: 1465px!important;
+		}
+	}
+	.section-title{
+		&:before{
+			content: '';
+			width: rem(50);
+			height: rem(5);
+			background-color: $primary;
+			display: inline-block;
+			margin-bottom: 11px;
+		}
+
+		h2{
+			color: $body-color;
+			font-size: rem(45);
+			line-height: 1;
+			font-weight: 700;
+
+			@include media-breakpoint-up(xl){
+				margin-bottom: 5px;
+			}
+		}
+		p{
+			color: $body-color;
+			font-size: rem(25);
+			font-weight: 700;
+		}
+	}
+	&__items{
+		@include media-breakpoint-up(xxl){
+			padding-left: 88px;
+		}
+	}
+	&__item{
+		padding-bottom: rem(40);
+		margin-bottom: rem(40);
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(73);
+			margin-bottom: rem(67);
+		}
+		&:last-child{
+			padding-bottom: 0;
+			margin-bottom: 0;
+			&:after{
+				content: none;
+			}
+		}
+
+		position: relative;
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: calc(-1 * (100vw - 100%) / 2);
+			width: 100vw;
+			height: 3px;
+			background-color: $gray-110;
+		}
+	}
+	&__i-row{
+		--bs-gutter-x: #{rem(20)};
+		--bs-gutter-y: #{rem(30)};
+	}
+	&__box-col{
+		@include media-breakpoint-up(lg){
+			width: calc(#{rem(386)} + var(--bs-gutter-x)) !important;
+		}
+		display: flex;
+	}
+
+	&__img-row{
+		--bs-gutter-x: #{rem(15)};
+		--bs-gutter-y: #{rem(15)};
+
+		@include media-breakpoint-up(xxl){
+			--bs-gutter-y: #{rem(10)};
+		}
+	}
+	&__img{
+
+		&--sm{
+			margin-bottom: var(--bs-gutter-y);
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			@extend .accept-ratio-frame-nh;
+			padding-top: (267/325) * 100%;
+		}
+		&--big{
+			@include media-breakpoint-down(sm){
+				display: block;
+				width: 100%;
+				height: 0;
+				position: relative;
+				overflow: hidden;
+				padding-top: (267/325) * 100%;
+
+				img {
+					@include mt();
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					object-fit: cover;
+				}
+			}
+
+			//
+			@include media-breakpoint-up(sm){
+				position: absolute;
+				top: 0;
+				left: calc(var(--bs-gutter-x) / 2);
+				width: calc(100% - var(--bs-gutter-x));
+				height: 100%;
+
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+		}
+
+	}
+
+	//
+	&__sm-col{
+		@include media-breakpoint-up(sm){
+			width: 35.6%!important;
+		}
+	}
+	&__big-col{
+		position: relative;
+	}
+	//
+	&__box{
+		padding: rem(30) rem(20);
+		@include media-breakpoint-up(sm){
+			padding: rem(40) rem(30);
+		}
+		//
+		@include media-breakpoint-up(lg){
+			padding: rem(20);
+		}
+		border: rem(4px) solid $cyan;
+		@include media-breakpoint-up(xl){
+			border: rem(10px) solid $cyan;
+			padding: rem(40) rem(30);
+		}
+		@include media-breakpoint-up(xxl){
+			padding: rem(37) rem(42);
+		}
+		width: 100%;
+	}
+	&__title{
+		color: $primary;
+		font-size: rem(25);
+		font-weight: 700;
+		margin-bottom: rem(20);
+	}
+	&__descr{
+		color: $body-color;
+		line-height: (20.48/16);
+		margin-bottom: rem(16);
+	}
+	&__price{
+		color: $body-color;
+		font-size: rem(25);
+		font-weight: 700;
+
+	}
+	&__size-items{
+		margin-bottom: rem(12px);
+		@include media-breakpoint-up(xxl){
+			margin-top: -4px;
+		}
+	}
+	&__size{
+		margin-bottom: 0px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		span{
+			line-height: (28/16);
+		}
+		b{
+			font-size: rem(20);
+		}
+	}
+	&__buy-btn{
+		@extend .btn-red;
+		min-width: rem(181);
+	}
+	//
+	&__{}
+	&__{}
+} // end.sMaps

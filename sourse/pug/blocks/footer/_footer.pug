@@ -1,2 +1,20 @@
 mixin footer()
-	footer.footer
+  +b.FOOTER.footer
+    +e.container.container
+      +e.row.row
+        .col-sm.col-lg-auto
+          +e.logo(href="/")
+            img(loading="lazy" src="img/@2x/logo.png" alt="")
+          +e.txt.mt-3.d-lg-none Maps by GreenOak
+        .col-auto.d-none.d-lg-block
+          +e.txt Maps by GreenOak
+        .col
+          ul.menu
+            li.menu-item: a(href='#') Our maps
+            li.menu-item: a(href='#') Преимущества
+            li.menu-item: a(href='#') About us
+        .col-auto.d-none.d-lg-block
+          +e.mail(href='mailto:gomaps.store@gmail.com') gomaps.store@gmail.com
+        .col-sm-auto
+          +e.btn(href='#') LEARN MORE
+          +e.mail.mt-3.d-block.d-lg-none(href='mailto:gomaps.store@gmail.com') gomaps.store@gmail.com

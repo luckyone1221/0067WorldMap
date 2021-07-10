@@ -1,28 +1,33 @@
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js.d-lg-none
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
+			+e.logo(href="/")
+				img(loading="lazy" src="img/@2x/logo.png" alt='')
 			+mnu()
+			+e.mail(href='mailto:gomaps.store@gmail.com') gomaps.store@gmail.com
+			+e.btn(href="#") LEARN MORE
 	//  мобильное меню
+
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
-			.row
+		+e.container.container
+			+e.row.row.align-items-center
+				.col.col-lg-auto
+					+e.logo
+						img(loading="lazy" src="img/@2x/logo.png" alt='')
+					//-+e.map-txt.mt-2.d-xxl-none Maps by GreenOak
+				.col-auto.d-none.d-xxl-block
+					+e.map-txt Maps by GreenOak
+				.col.d-none.d-lg-block
+					+mnu()
+				.col-auto.d-none.d-lg-block
+					+e.mail(href='mailto:gomaps.store@gmail.com') gomaps.store@gmail.com
+				.col-auto.d-none.d-sm-block
+					+e.btn(href="#") LEARN MORE
 				.col-auto.d-lg-none
 					+b.toggle-menu-mobile--js
 						span
-				.col.d-none.d-lg-block
-					+mnu()
-					
 	// end top-nav

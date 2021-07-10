@@ -1,10 +1,38 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
+	+b.headerBlock#headerBlock&attributes(attributes)
+		+e.container.container-fluid
+			+e.row.row
+				.col-lg-6
+					+e.box
+						+e.box-bg
+							img(loading="lazy" src="img/@2x/world-map.png" alt="")
+						+e.H1.title
+							span
+								| World maps by
+								|
+							span.text-success GREEN&#160;OAK
+						+e.aft-title
+							span.text-info
+								| DISCOVER THE WORLD
+								|
+							br.d-sm-none
+							span with our maps
+						+e.vantages
+							+headerBlockVantageItem(1, 'Materials of the highest quality')
+							+headerBlockVantageItem(2, 'High-tech laser equipment')
+							+headerBlockVantageItem(3, 'Unique design of masters of their craft')
+				.col-lg-6.d-none.d-lg-block
+					+e.img
+						img(loading="lazy" src="img/@2x/headerBlock-img.png" alt="")
 
-			.row
-						
 	// end headerBlock
+
+mixin headerBlockVantageItem(imgNum, txt)
+	+e.v-item
+		+e.v-row.row.align-items-center
+			.col-auto
+				+e.v-icon
+					img(loading="lazy" src=`img/@2x/headerBlock-v-${imgNum}.png` alt="")
+			.col
+				+e.v-txt=txt

@@ -1,0 +1,20 @@
+mixin sWhy(data)
+	// start sWhy
+	+b.SECTION.sWhy.section#sWhy&attributes(attributes)
+		+e.container.container
+			+b.section-title.text-center
+				h2 Why do customers choose maps from SIA GreenOAK
+			+e.row.row
+				+sWhyItem('1.svg',`Thorough quality control at all stages`)
+				+sWhyItem('2.svg',`Impeccable service`)
+				+sWhyItem('3.svg',`Responsive sellersmen`)
+				+sWhyItem('4.png',`Attention to every detail`)
+	// end sWhy
+
+mixin sWhyItem(imgEnd, txt)
+	.col-6.col-lg-3
+		+e.item.text-center
+			+e.ball
+				+e.icon
+					img(loading="lazy" src=`img/svg/sWhy-${imgEnd}` alt="")
+			+e.txt!=txt

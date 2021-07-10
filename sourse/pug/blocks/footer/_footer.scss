@@ -1,43 +1,91 @@
 .footer {
-		
-	margin-top: auto;
 
-// 
-@include media-breakpoint-up(xl) {}
+	color: $white;
+	background-color: $brown;
 
-@include media-breakpoint-up(lg) {}
+	padding: rem(40) 0 rem(60);
+	@include media-breakpoint-up(lg){
+		padding: rem(55) 0 rem(80);
+	}
+	@include media-breakpoint-up(xl){
+		padding: rem(80) 0 rem(120);
+	}
+	&__container{
+		@include media-breakpoint-up(xxl){
+			max-width: 1439px!important;
+			padding-left: 41px;
+		}
+	}
+	&__row{
+		--bs-gutter-y: #{rem(24)};
 
-@include media-breakpoint-up(md) {}
+		--bs-gutter-x: #{rem(20)};
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(38)};
+		}
+	}
+	&__logo{
+		display: block;
+		width: rem(168);
 
-@include media-breakpoint-up(sm) {}
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	&__txt{
+		font-weight: 700;
+		line-height: 1.1;
 
-@include media-breakpoint-up(xs) {}
+		font-size: rem(22);
+		@include media-breakpoint-up(xl){
+			font-size: rem(26);
+			margin-right: 46px;
+		}
+	}
+	.menu{
+		display: block;
+		margin: 0;
 
+		&-item{
+			margin-bottom: 18px;
+			&:last-child{
+				margin-bottom: 0;
+			}
 
-// 
-@include media-breakpoint-between(md, xl) {}
+			a{
+				@include mt();
+				display: inline-block;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid currentColor;
+				&:hover{
+					border-bottom: 1px solid transparent;
+				}
 
+				padding: 0;
+				text-align: left;
+				color: $white;
+				text-decoration: none;
+				line-height: 1.2;
+			}
+		}
+	}
+	&__mail{
+		color: $white;
+		font-weight: 300;
+		text-decoration: none;
+		line-height: 1.2;
+	}
+	&__btn{
+		@extend .btn-green;
+		min-width: rem(181);
 
-// 
-@include media-breakpoint-only(xs) {}
-
-@include media-breakpoint-only(sm) {}
-
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
-
-
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}
+		@include media-breakpoint-up(xxl){
+			position: relative;
+			top: -10px;
+		}
+	}
+	//
+	&__{}
+	&__{}
 }
